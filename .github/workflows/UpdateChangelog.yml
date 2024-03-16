@@ -17,10 +17,10 @@ jobs:
         with:
           path: ${{ env.GEM_HOME }}
           key: ${{ runner.os }}
-      - run: gem install github_changelog_generator
       - name: "Update CHANGELOG.md"
         env:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gem install github_changelog_generator
       - name: "Commit CHANGELOG.md"
         run: |
           github_changelog_generator -u skywinder -p ActionSheetPicker-3.0
