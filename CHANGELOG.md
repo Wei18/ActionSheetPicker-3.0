@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/skywinder/ActionSheetPicker-3.0/tree/HEAD)
+
+[Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.7.3...HEAD)
+
+**Merged pull requests:**
+
+- add Wei18 as a contributor for infra, review, and maintenance [\#572](https://github.com/skywinder/ActionSheetPicker-3.0/pull/572) ([allcontributors[bot]](https://github.com/apps/allcontributors))
+- Update CONTRIBUTING.md [\#553](https://github.com/skywinder/ActionSheetPicker-3.0/pull/553) ([noorulain17](https://github.com/noorulain17))
+
 ## [2.7.3](https://github.com/skywinder/ActionSheetPicker-3.0/tree/2.7.3) (2024-02-05)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/2.7.2...2.7.3)
@@ -907,10 +916,6 @@
 ## [1.0.14](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.14) (2014-08-01)
 
 [Full Changelog](https://github.com/skywinder/ActionSheetPicker-3.0/compare/1.0.13...1.0.14)
-
-**Merged pull requests:**
-
-- Set minimum date properly. [\#14](https://github.com/skywinder/ActionSheetPicker-3.0/pull/14) ([matt](https://github.com/matt))
 
 ## [1.0.13](https://github.com/skywinder/ActionSheetPicker-3.0/tree/1.0.13) (2014-07-30)
 
