@@ -9,7 +9,7 @@ jobs:
   
   build:
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
         - xcode: "11.7"
