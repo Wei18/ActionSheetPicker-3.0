@@ -4,17 +4,13 @@ on:
   push:
     branches: 
       - develop
-
-env:
-  GEM_HOME: ~/gem
-  CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
       - uses: actions/cache@v4
@@ -22,7 +18,11 @@ jobs:
           path: ${{ env.GEM_HOME }}
           key: ${{ runner.os }}
       - run: gem install github_changelog_generator
-      - run: |
+      - name: "Update CHANGELOG.md"
+        env:
+          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Commit CHANGELOG.md"
+        run: |
           github_changelog_generator -u skywinder -p ActionSheetPicker-3.0
           git add CHANGELOG.md
           if [ ! -n "$(git status -s)" ]; then
@@ -33,4 +33,3 @@ jobs:
             git commit -m "Update CHANGELOG.md"
             git push --no-verify
           fi
-          
