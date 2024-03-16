@@ -4,9 +4,13 @@ on:
   push:
     branches: 
       - develop
+    paths:
+      - '.github/workflows/CIBuild.yml'
+      - 'ActionSheetPicker-3.0.podspec'
+      - 'Package.swift'
+      - 'CoreActionSheetPicker/**'
 
 jobs:
-  
   build:
     strategy:
       fail-fast: false
@@ -18,13 +22,11 @@ jobs:
           os: macos-11
         - xcode: "15.2"
           os: macOS-14
-
     runs-on: ${{ matrix.os }}  
     env:
       DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer"
     steps:
       - uses: actions/checkout@v4
-
       - name: "Build SwiftPackage"
         run: |
           # Starting with Xcode 11, xcodebuild supports SwiftPM packages out of the box.
@@ -33,7 +35,6 @@ jobs:
             -scheme CoreActionSheetPicker \
             -sdk iphonesimulator \
             -destination "name=iPhone 11 Pro"
-
       - name: "Build CocoaPods"
         run: |
           gem install cocoapods
