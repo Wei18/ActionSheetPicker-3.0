@@ -17,7 +17,7 @@ jobs:
         - xcode: "13.2.1"
           os: macos-11
         - xcode: "15.2"
-          os: macos-latest
+          os: macOS-14
 
     runs-on: ${{ matrix.os }}  
     env:
